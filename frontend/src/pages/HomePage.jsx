@@ -6,7 +6,7 @@ import { Third } from "../component/sliders/HomePage/third";
 import Fourth from "../component/sliders/HomePage/Fourth";
 export const HomePage = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center" }} id="Home">
       {" "}
       <div style={{ color: "white", backgroundColor: "#001220" }}>
         <div
@@ -49,9 +49,15 @@ export const HomePage = () => {
                 backgroundColor: "#495669",
                 height: "40px",
                 color: "white",
+                marginTop: "20px",
+                transform: "scale(1)",
+                transition: "transform 0.5s ease-in-out",
               }}
             >
-              <h5>Back to top</h5>
+              {" "}
+              <a href="#Home">
+                <h5 style={{color:"white"}}>Back to top</h5>
+              </a>
             </div>
             <div
               style={{

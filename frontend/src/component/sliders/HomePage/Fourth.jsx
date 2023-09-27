@@ -44,8 +44,7 @@ export default class Fourth extends Component {
           width: "95%",
           margin: "auto",
           backgroundColor: "white",
-          padding: "10px",
-          textAlign: "center",
+          paddingBottom: "20px",
         }}
       >
         <h2 style={{ color: "black", textAlign: "left", paddingTop: "10px" }}>
@@ -87,7 +86,7 @@ export default class Fourth extends Component {
                 Deal Of the Day
               </h6>
             </div>
-            />
+            
           </div>
           <div>
             <img

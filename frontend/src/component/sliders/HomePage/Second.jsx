@@ -73,7 +73,7 @@ export default class Second extends Component {
                 Deal Of the Day
               </h6>
             </div>
-            />
+            
           </div>
           <div>
             <img
