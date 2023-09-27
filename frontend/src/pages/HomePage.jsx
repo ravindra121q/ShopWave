@@ -56,7 +56,7 @@ export const HomePage = () => {
             >
               {" "}
               <a href="#Home">
-                <h5 style={{color:"white"}}>Back to top</h5>
+                <h5 style={{ color: "white" }}>Back to top</h5>
               </a>
             </div>
             <div
@@ -70,7 +70,7 @@ export const HomePage = () => {
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(4,1fr)",
-                  lineHeight: "0.5rem",
+                  lineHeight: "1.5rem",
                 }}
               >
                 <div>

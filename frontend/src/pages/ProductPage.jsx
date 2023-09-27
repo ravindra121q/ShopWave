@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { SideBar } from "../component/SideBar";
 import axios from "axios";
 import "../css/ProductPage.css";
+import SideBarComponent from "../component/SideBar";
+import { useNavigate } from "react-router-dom";
 export const ProductPage = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
@@ -11,11 +13,16 @@ export const ProductPage = () => {
     console.log(products);
   }, []);
   return (
-    <div style={{ textAlign: "center", padding: "10px" }}>
-      <hr />
+    <div
+      style={{
+        textAlign: "center",
+        padding: "10px",
+        backgroundColor: "#001220",
+      }}
+    >
       <div style={{ display: "flex" }}>
         <div style={{ width: "20%", borderRight: "1px solid grey" }}>
-          <SideBar />
+          <SideBarComponent />
         </div>
         <div
           style={{
@@ -35,7 +42,13 @@ export const ProductPage = () => {
             {products.length > 0 &&
               products.map((e) => {
                 return (
-                  <div className="card" key={e.id}>
+                  <div
+                    className="card"
+                    key={e.id}
+                    onClick={() =>
+                      navigate("/singleproductpage", { id: "e.id" })
+                    }
+                  >
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <img
                         src={e.image}
