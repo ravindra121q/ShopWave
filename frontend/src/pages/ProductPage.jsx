@@ -5,14 +5,14 @@ import SideBarComponent from "../component/SideBar";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../component/Pagination";
 import PaginationComp from "../component/Pagination";
+import { useDispatch } from "react-redux";
+import { getData } from "../redux/dataReducer/action";
 export const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) => setProducts(res.data));
-    console.log(products);
+    dispatch(getData());
   }, []);
   return (
     <div
