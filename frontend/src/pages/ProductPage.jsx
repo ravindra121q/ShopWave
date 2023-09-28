@@ -3,6 +3,8 @@ import axios from "axios";
 import "../css/ProductPage.css";
 import SideBarComponent from "../component/SideBar";
 import { useNavigate } from "react-router-dom";
+import Pagination from "../component/Pagination";
+import PaginationComp from "../component/Pagination";
 export const ProductPage = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
@@ -71,6 +73,9 @@ export const ProductPage = () => {
                   </div>
                 );
               })}
+          </div>
+          <div className="text-white-500 pb-2 mt-5">
+            <PaginationComp />
           </div>
         </div>
       </div>
