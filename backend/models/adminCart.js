@@ -14,4 +14,6 @@ const adminCartSchema = mongoose.Schema(
   { versionKey: false }
 );
 
-const adminCartModel = mongoose.model("AdminCart", adminCartSchema);
+const adminCartModel = mongoose.model("admincart", adminCartSchema);
+
+module.exports = { adminCartModel };

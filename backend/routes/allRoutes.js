@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const { userModel } = require("../models/userModel");
 const { isAuth } = require("../middleware/authMiddleware");
 const { cartModel } = require("../models/cartModel");
+const { adminCartModel } = require("../models/adminCart");
 const router = express.Router();
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
@@ -101,6 +102,15 @@ router.delete("/product/cart/items/:id", async (req, res) => {
     } else {
       return res.json({ msg: "Item Not Found" });
     }
+  }
+});
+
+router.get("/product/cart/adminItems", async (req, res) => {
+  try {
+    const items = await adminCartModel.find();
+    return res.json(items);
+  } catch (error) {
+    return res.json(error);
   }
 });
 
