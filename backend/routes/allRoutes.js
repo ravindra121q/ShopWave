@@ -7,7 +7,6 @@ const { cartModel } = require("../models/cartModel");
 const { adminCartModel } = require("../models/adminCart");
 const router = express.Router();
 
-
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const userExists = await userModel.findOne({ email });
@@ -110,7 +109,7 @@ router.delete("/product/cart/items/:id", async (req, res) => {
 router.get("/product/cart/adminItems", async (req, res) => {
   try {
     const items = await adminCartModel.find();
-    return res.json(items);
+    return res.send(items);
   } catch (error) {
     return res.json(error);
   }
