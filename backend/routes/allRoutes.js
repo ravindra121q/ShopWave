@@ -6,6 +6,8 @@ const { isAuth } = require("../middleware/authMiddleware");
 const { cartModel } = require("../models/cartModel");
 const { adminCartModel } = require("../models/adminCart");
 const router = express.Router();
+
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const userExists = await userModel.findOne({ email });

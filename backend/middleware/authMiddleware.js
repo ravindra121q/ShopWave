@@ -12,6 +12,7 @@ const isAuth = (req, res, next) => {
     return;
   }
   return res.json({ msg: "Please Login Again" });
+  next();
 };
 
 module.exports = { isAuth };
