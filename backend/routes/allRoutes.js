@@ -106,12 +106,20 @@ router.delete("/product/cart/items/:id", async (req, res) => {
   }
 });
 
+const adminCartModel = require("../models/adminCartModel");
+
 router.get("/product/cart/adminItems", async (req, res) => {
   try {
     const items = await adminCartModel.find();
-    return res.send(items);
+
+    if (!items) {
+      return res.status(404).json({ message: "No items found" });
+    }
+
+    return res.status(200).json(items);
   } catch (error) {
-    return res.json(error);
+    console.error("Error fetching items:", error);
+    return res.status(500).json({ message: "Internal server error" });
   }
 });
 
