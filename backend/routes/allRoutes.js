@@ -106,8 +106,6 @@ router.delete("/product/cart/items/:id", async (req, res) => {
   }
 });
 
-const adminCartModel = require("../models/adminCartModel");
-
 router.get("/product/cart/adminItems", async (req, res) => {
   try {
     const items = await adminCartModel.find();
