@@ -12,7 +12,7 @@ const dbConnect = async (req, res) => {
 };
 
 dbConnect().then(() => {
-  app.listen(process.env.Port, (req, res) => {
+  app.listen(process.env.PORT, (req, res) => {
     console.log("Server is Working");
   });
 });
